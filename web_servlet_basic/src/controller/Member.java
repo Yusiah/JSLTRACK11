@@ -45,11 +45,12 @@ public class Member extends HttpServlet {
 		if(gubun.equals("list")) {
 			MemberList memberList = new MemberList();
 			memberList.excute(request);
-			viewPage="member/member_list.jsp";
+//			viewPage="member/member_list.jsp";
+			viewPage="member/member_list_jstl.jsp";
 			
 		// 등록 폼
 		} else if(gubun.equals("writeForm")) {
-			viewPage="member/member_write.jsp";
+			viewPage="member/member_write_jstl.jsp";
 			
 		// 저장
 		} else if(gubun.equals("memberSave")) {
@@ -61,13 +62,13 @@ public class Member extends HttpServlet {
 		} else if(gubun.equals("memberView")) {
 			CommonExcute member = new MemberView();
 			member.excute(request);
-			viewPage="member/member_view.jsp";
+			viewPage="member/member_view_jstl.jsp";
 			
 		// 수정 폼	
 		} else if(gubun.equals("memberUpdateForm")) {
 			CommonExcute member = new MemberView();
 			member.excute(request);
-			viewPage="member/member_update.jsp";
+			viewPage="member/member_update_jstl.jsp";
 			
 		// 수정 저장	
 		} else if(gubun.equals("memberUpdate")) {
@@ -84,10 +85,6 @@ public class Member extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher(viewPage);
 		rd.forward(request, response);
-		
-		
-		
-	
 		
 	
 		

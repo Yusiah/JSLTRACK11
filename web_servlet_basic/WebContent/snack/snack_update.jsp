@@ -20,8 +20,10 @@
 			
 			snack.t_price.value = newPrice;
 			
+			snack.t_gubun.value="snackUpdate";
 			snack.method="post";
-			snack.action="DBSnackUpdate";
+//			snack.action="DBSnackUpdate";
+			snack.action="Snack";
 			snack.submit();
 		}
 	</script>
@@ -33,6 +35,7 @@
 		</div>		
 		<div class="write_wrap">
 			<form name="snack">
+			<input type = "hidden" name="t_gubun">
 			<input type="hidden" name="t_p_code" value="<%=dto.getP_code()%>">
 			<div class="board_list">
 				<table class="board_table">
@@ -64,9 +67,9 @@
 							<td class="th_left">
 								<select name="t_m_code"  class="select">
 									<%for(SnackDto dto2 : dtos) {%>
-										<option value="<%=dto.getM_code() %>" <%if(dto.getM_code().equals(dto.getM_code()))out.print("selected"); %>><%=dto.getM_name() %></option>
+										<option value="<%=dto2.getM_code() %>" <%if(dto2.getM_code().equals(dto.getM_code()))out.print("selected"); %>><%=dto2.getM_name() %></option>
 									<%} %>
-									<option >농심</option>
+								
 								</select>								
 							</td>
 						</tr>
@@ -75,30 +78,13 @@
 			</div>
 			</form>
 			<div class="btn_wrap">
-				<input type="button" onClick="location.href='SnackList'" value="목록" class="btn_list">
+				<input type="button" onClick="location.href='Snack'" value="목록" class="btn_list">
 				<input type="button" onClick="goUpdate()" value="수정저장" class="btn_ok">&nbsp;&nbsp;
+				
+<!--  			<input type="button" onClick="location.href='SnackList'" value="목록" class="btn_list">
+				<input type="button" onClick="goUpdate()" value="수정저장" class="btn_ok">&nbsp;&nbsp;  -->	
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    

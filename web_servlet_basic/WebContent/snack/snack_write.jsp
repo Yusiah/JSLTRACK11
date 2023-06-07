@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>TRACK11 홍길동</title>
+	<title>TRACK11 김진욱</title>
 	<link href="css/common.css" rel="stylesheet">
 	<link href="css/layout.css" rel="stylesheet" >		
 	<script type="text/javascript">
@@ -29,8 +29,10 @@
 			snack.t_price.focus();
 			return;
 		}
-		snack.method = "post";
-		snack.action="DBSnackSave";
+		
+		snack.t_gubun.value="snackSave";
+		snack.method ="post";
+		snack.action="Snack";
 		snack.submit();
 	}
 
@@ -49,6 +51,7 @@
 		</div>		
 		<div class="write_wrap">
 			<form name="snack">
+			<input type ="hidden" name="t_gubun">
 			<div class="board_list">
 				<table class="board_table">
 					<colgroup>
@@ -91,7 +94,8 @@
 			</form>
 			<div class="btn_wrap">
 				<input type="button" onclick="goSave()" value="등록" class="btn_ok">&nbsp;&nbsp;
-				<input type="button" value="목록" onclick="SnackList" class="btn_list">
+<!--			<input type="button" value="목록" onclick="SnackList" class="btn_list">    -->
+				<input type="button" value="목록" onclick="location.href='Snack'" class="btn_list">
 			</div>
 		</div>
 	</div>

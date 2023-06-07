@@ -44,7 +44,7 @@ public class SnackList extends HttpServlet {
 			select="p_code";
 			search="";
 		}
-		ArrayList<SnackDto> dtos = dao.getSnackList(select, search);
+		ArrayList<SnackDto> dtos = dao.getSnackList(select, search,"");
 		
 		request.setAttribute("t_dtos", dtos);
 		request.setAttribute("t_select", select);

@@ -102,12 +102,13 @@ public class SnackDao {
 	}
 	
 	// 목록 조회
-	public ArrayList<SnackDto> getSnackList(String gubun, String search){
+	public ArrayList<SnackDto> getSnackList(String gubun, String search, String make){
 		ArrayList<SnackDto> dtos = new ArrayList<>();
 		String query = "select  s.p_code, s.p_name, c.m_name, to_char(s.price, '999,999') as price\r\n" + 
 				" from h_김진욱_snack s, commonsnack c\r\n" + 
 				" where s.m_code = c.m_code\r\n" + 
 				" and "+gubun+" like '%"+search+"%'\r\n" + 
+				" and m_name like '%"+make+"%'\r\n" + 
 				" order by p_code desc";
 		try {
 			con = DBConnection.getConnection();

@@ -12,6 +12,7 @@
 	<link href="css/common.css" rel="stylesheet">
 	<link href="css/layout.css" rel="stylesheet" >	
 	<script type="text/javascript">
+	
 		function goUpdate(){
 			mem.t_gubun.value="memberUpdate";
 			mem.method="post";
